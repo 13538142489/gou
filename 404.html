@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .error{
+            width: 100%;
+            text-align: center;
+        }
+        .error img{
+            width: 200px;
+            margin-top: 300px;
+        }
+        @media screen and (max-width: 640px) {
+            .error img{
+                margin-top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="error">
+        <img src="images/404.png" alt="">
+        <p>sorry，页面走丢了，3s后将自动跳转到首页</p>
+    </div>
+
+    <script>
+        var p = document.getElementsByTagName("p")[0];
+        var num = 3;
+        var b = setInterval(function(){
+            if(num == 0){
+                window.clearInterval(b);
+                window.location.href='http://www.htmbh.com';
+            }else{
+                num--;
+                p.innerHTML = "sorry，页面走丢了，" + num + "s后将自动跳转到首页";
+            }
+        },1000);
+    </script>
+
+</body>
+</html>
